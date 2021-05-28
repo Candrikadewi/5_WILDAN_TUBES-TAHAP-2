@@ -123,6 +123,7 @@ if konfir2=="Sudah" :
                                 print("Nama Ibu:", nama_ibu)
                                 print("Rumah Sakit Rujukan:", rsmilih3)
                                 print("Tanggal Vaksinasi:", tvaksin3)
+                                               
                             elif kecamatan4=="Banjarsari":
                                 rs4= ['1.RSUD Kota Surakarta','2.RSUD Brayat Minulyo','3.RS PKU Muhammadiyah Surakarta',
                                       '4.RS Triharsi']
@@ -133,5 +134,39 @@ if konfir2=="Sudah" :
                                 print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                                 rsmilih4= str(input("Masukkan nama rumah sakit yang Anda pilih="))
                                 tvaksin4 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+                                               
+                                # output 4
+                                print("Data Registrasi")
+                                print("Nama Pasien:", nama)
+                                print("Usia:", tahunusia, "Tahun")
+                                print("Nama Ayah:", nama_ayah)
+                                print("Nama Ibu:", nama_ibu)
+                                print("Rumah Sakit Rujukan:", rsmilih4)
+                                print("Tanggal Vaksinasi:", tvaksin4)
+                                               
+                            else:
+                                rs5 = ['1.RSUD Bung Karno', '2.RS Kustati','3.RS PKU Sampangan']
+                                bunga5 = 0
+                                for win in range(0, 4):
+                                    print(rs5[bunga5])
+                                    bunga5 += 1
+                                print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
+                                rsmilih5 = str(input("Masukkan nama rumah sakit yang Anda pilih="))
+                                tvaksin5 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+
+                                # output 5
+                                print("Data Registrasi")
+                                print("Nama Pasien:", nama)
+                                print("Usia:", tahunusia, "Tahun")
+                                print("Nama Ayah:", nama_ayah)
+                                print("Nama Ibu:", nama_ibu)
+                                print("Rumah Sakit Rujukan:", rsmilih5)
+                                print("Tanggal Vaksinasi:", tvaksin5)
+
+
+    else:
+        print("Maaf Anda belum dapat mengikuti program vaksinasi dikarenakan usia Anda belum mencukupi / masih di bawah 18 tahun")
+else:
+    print("Mohon persiapkan dahulu seluruh data yang diperlukan!")
 
                                 
