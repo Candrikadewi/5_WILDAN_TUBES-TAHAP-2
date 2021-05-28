@@ -66,3 +66,37 @@ if konfir2=="Sudah" :
                             pernyataan2 = str(input("Apakah dari pernyataan di atas terdapat 2 atau lebih gejala yang Anda alami (Y/N)?"))
                             if pernyataan2=="Y":
                                 print("Maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum memenuhi syarat kesehatan")
+                            else:
+                                kecamatan= str(input("Masukkan alamat Kecamatan Anda ="))
+                            kecamatan1= kecamatan.title()
+                            kecamatan2 = kecamatan.title()
+                            kecamatan3 = kecamatan.title()
+                            kecamatan4 = kecamatan.title()
+                            if kecamatan1=="Laweyan":
+                                rs1= ['1.RSUD Panti Waluyo','2.RSUD Kasih Ibu','3.RS JIH Surakarta','4.RSUP Surakarta',
+                                      '5.RS Mata Solo','6. RSGM Sulastri','7.RS Onkologi Surakarta']
+                                bunga1 = 0
+                                for win in range(0, 7):
+                                    print(rs1[bunga1])
+                                    bunga1 += 1
+                                print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
+                                rsmilih1= str(input("Masukkan nama rumah sakit yang Anda pilih="))
+                                tvaksin1= str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+
+                                #output 1
+                                print("Data Registrasi")
+                                print("Nama Pasien:", nama)
+                                print("Usia:", tahunusia,"Tahun")
+                                print("Nama Ayah:",nama_ayah)
+                                print("Nama Ibu:",nama_ibu)
+                                print("Rumah Sakit Rujukan:", rsmilih1)
+                                print("Tanggal Vaksinasi:", tvaksin1)
+                            elif kecamatan2=="Jebres":
+                                rs2= ['1.RSUD Dr.Moewardi','2.RSUD Oen Surakarta','3.RS Hermina','4.RSJP Surakarta']
+                                bunga2 = 0
+                                for win in range(0, 4):
+                                    print(rs2[bunga2])
+                                    bunga2 += 1
+                                print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
+                                rsmilih2= str(input("Masukkan nama rumah sakit yang Anda pilih="))
+                                tvaksin2 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
