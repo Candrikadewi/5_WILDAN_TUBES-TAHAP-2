@@ -32,3 +32,37 @@ if konfir2=="Sudah" :
     bulanusia = int(((registrasi - lahir) % 365) / 30)
     hariusia  = int(((registrasi - lahir) % 365) % 30)
     print("Usia=",tahunusia,"tahun")
+
+    if tahunusia >= 18:
+        jk = str(input("Jenis Kelamin (P/L)="))
+        if jk =="P":
+                mengandung= str(input("Apakah anda sedang mengandung (Y/N)?"))
+                if mengandung=="Y":
+                    print("Maaf anda belum dapat mengikuti program vaksinasi dikarenakan sedang mengandung")
+                else:
+                    terpapar = str(input("Apakah Anda pernah terpapar covid dalam jangka waktu 3 bulan terakhir?(Y/N)"))
+                if terpapar == "Y":
+                    print("Maaf Anda belum dapat mengikuti program vaksinansi dikarenakan belum memenuhi persyaratan kesehatan")
+                else:
+                    riwayatsakit = str(input("Apakah Anda memiliki riwayat hipertensi atau penyakit kronis lain?(Y/N)"))
+                    if riwayatsakit == "Y":
+                        suratizin = str(input("Apakah Anda sudah mendapat surat layak vaksin dari dokter?(Y/N)"))
+                        if suratizin == "N":
+                            print("Mohon maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum"
+                                              "memenuhi persyaratan kesehatan")
+                        else:
+                            vaksin= str(input("Apakah anda menerima vaksin lain dalam kurun waktu 1 bulan terakhir? (Y/N)"))
+                            if vaksin == "Y":
+                                print("Mohon maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum"
+                                "memenuhi persyaratan kesehatan")
+                            else:
+                                pernyataan = ['1.Mengalami kesulitan saat menaiki anak tangga','2.Sering mengalami kelelahan',
+                                      '3. Mengalami kesulitan saat berjalan 100-200 meter',
+                                      '4. Adanya penurunan berat badan yang signifikan dalam satu tahun terakhir']
+                                rose2 = 0
+                                for win in range(0, 4):
+                                      print(pernyataan[rose2])
+                                      rose2 += 1
+                            pernyataan2 = str(input("Apakah dari pernyataan di atas terdapat 2 atau lebih gejala yang Anda alami (Y/N)?"))
+                            if pernyataan2=="Y":
+                                print("Maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum memenuhi syarat kesehatan")
