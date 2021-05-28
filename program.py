@@ -99,4 +99,39 @@ if konfir2=="Sudah" :
                                     bunga2 += 1
                                 print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                                 rsmilih2= str(input("Masukkan nama rumah sakit yang Anda pilih="))
-                                tvaksin2 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+                                tvaksin2 = str(input("Tanggal vaksin (dd/mm/yyyy)= ")                          
+
+                                # output 2
+                                print("Data Registrasi")
+                                print("Nama Pasien:", nama)
+                                print("Usia:", tahunusia, "Tahun")
+                                print("Nama Ayah:", nama_ayah)
+                                print("Nama Ibu:", nama_ibu)
+                                print("Rumah Sakit Rujukan:", rsmilih2)
+                                print("Tanggal Vaksinasi:", tvaksin2)
+
+                            elif kecamatan3=="Serengan":
+                                rsmilih3= "RS Bung Karno"
+                                print("Anda dapat melakukan vaksin di", rsmilih3)
+                                tvaksin3 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+
+                                # output 3
+                                print("Data Registrasi")
+                                print("Nama Pasien:", nama)
+                                print("Usia:", tahunusia, "Tahun")
+                                print("Nama Ayah:", nama_ayah)
+                                print("Nama Ibu:", nama_ibu)
+                                print("Rumah Sakit Rujukan:", rsmilih3)
+                                print("Tanggal Vaksinasi:", tvaksin3)
+                            elif kecamatan4=="Banjarsari":
+                                rs4= ['1.RSUD Kota Surakarta','2.RSUD Brayat Minulyo','3.RS PKU Muhammadiyah Surakarta',
+                                      '4.RS Triharsi']
+                                bunga4 = 0
+                                for win in range(0, 4):
+                                    print(rs4[bunga4])
+                                    bunga4 += 1
+                                print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
+                                rsmilih4= str(input("Masukkan nama rumah sakit yang Anda pilih="))
+                                tvaksin4 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))
+
+                                
