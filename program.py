@@ -99,7 +99,7 @@ if konfir2=="Sudah" :
                                     bunga2 += 1
                                 print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                                 rsmilih2= str(input("Masukkan nama rumah sakit yang Anda pilih="))
-                                tvaksin2 = str(input("Tanggal vaksin (dd/mm/yyyy)= ")                          
+                                tvaksin2 = str(input("Tanggal vaksin (dd/mm/yyyy)= "))                          
 
                                 # output 2
                                 print("Data Registrasi")
