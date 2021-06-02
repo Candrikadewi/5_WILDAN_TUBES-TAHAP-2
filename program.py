@@ -8,16 +8,26 @@ rose = 0
 for win in range (0,2) :
     print (listdata[rose])
     rose+=1
-konfir = str(input("Apakah semua data yang diperlukan sudah Anda siapkan? (Sudah/Belum):"))
+konfir = str(input("Apakah semua data yang diperlukan sudah Anda siapkan? (Y/N):"))
 konfir2 = konfir.title()
 
-if konfir2=="Sudah" :
+if konfir2=="Y" :
     print("Silakan mengisi identitas Anda dengan seksama dan jawablah pertanyaan sesuai dengan kondisi Anda saat ini")
     nama = str(input("Nama Lengkap="))
+    nama2 = nama.title()
+
     nik = int(input("NIK="))
+
     nama_ayah= str(input("Nama Ayah="))
+    nama_ayah2= nama_ayah.title()
+
     nama_ibu= str(input("Nama Ibu="))
+    nama_ibu2= nama_ibu.title()
+    
     print("Kelahiran:")
+    tempat= str(input("Tempat Lahir="))
+    tempat2= tempat.title()
+    
     tanggal = int(input("Tanggal Lahir="))
     bulan = int(input("Bulan Lahir="))
     tahun = int(input("Tahun Lahir="))
@@ -29,8 +39,7 @@ if konfir2=="Sudah" :
     tahunregist = int(input("Tahun Registrasi="))
     registrasi = tanggalregist + (bulanregist * 30) + (tahunregist * 365)
     tahunusia = int((registrasi - lahir) / 365)
-    bulanusia = int(((registrasi - lahir) % 365) / 30)
-    hariusia  = int(((registrasi - lahir) % 365) % 30)
+   
     print("Usia=",tahunusia,"tahun")
 
     if tahunusia >= 18:
@@ -85,12 +94,18 @@ if konfir2=="Sudah" :
 
                                 #output 1
                                 print("Data Registrasi")
-                                print("Nama Pasien:", nama)
-                                print("Usia:", tahunusia,"Tahun")
-                                print("Nama Ayah:",nama_ayah)
-                                print("Nama Ibu:",nama_ibu)
+                                print("Nama Pasien:", nama2)
+                                print("NIK:",nik)
+                                print("Tempat Lahir:", tempat2)
+                                print("Tanggal Lahir= ", tanggal, "/", bulan, "/", tahun)
+                                print("Usia:", tahunusia, "Tahun")
+                                print("Nama Ayah:", nama_ayah2)
+                                print("Nama Ibu:", nama_ibu2)
+                                print("Alamat:", kecamatan1)
                                 print("Rumah Sakit Rujukan:", rsmilih1)
+                                print("Tanggal Registrasi: ", tanggalregist, "/", bulanregist, "/", tahunregist)
                                 print("Tanggal Vaksinasi:", tvaksin1)
+                                
                             elif kecamatan2=="Jebres":
                                 rs2= ['1.RSUD Dr.Moewardi','2.RSUD Oen Surakarta','3.RS Hermina','4.RSJP Surakarta']
                                 bunga2 = 0
@@ -103,11 +118,16 @@ if konfir2=="Sudah" :
 
                                 # output 2
                                 print("Data Registrasi")
-                                print("Nama Pasien:", nama)
+                                print("Nama Pasien:", nama2)
+                                print("NIK:", nik)
+                                print("Tempat Lahir:", tempat2)
+                                print("Tanggal Lahir= ", tanggal, "/", bulan, "/", tahun)
                                 print("Usia:", tahunusia, "Tahun")
-                                print("Nama Ayah:", nama_ayah)
-                                print("Nama Ibu:", nama_ibu)
+                                print("Nama Ayah:", nama_ayah2)
+                                print("Nama Ibu:", nama_ibu2)
+                                print("Alamat:", kecamatan2)
                                 print("Rumah Sakit Rujukan:", rsmilih2)
+                                print("Tanggal Registrasi: ", tanggalregist, "/", bulanregist, "/", tahunregist)
                                 print("Tanggal Vaksinasi:", tvaksin2)
 
                             elif kecamatan3=="Serengan":
@@ -117,13 +137,18 @@ if konfir2=="Sudah" :
 
                                 # output 3
                                 print("Data Registrasi")
-                                print("Nama Pasien:", nama)
+                                print("Nama Pasien:", nama2)
+                                print("NIK:", nik)
+                                print("Tempat Lahir:", tempat2)
+                                print("Tanggal Lahir= ", tanggal, "/", bulan, "/", tahun)
                                 print("Usia:", tahunusia, "Tahun")
-                                print("Nama Ayah:", nama_ayah)
-                                print("Nama Ibu:", nama_ibu)
+                                print("Nama Ayah:", nama_ayah2)
+                                print("Nama Ibu:", nama_ibu2)
+                                print("Alamat:", kecamatan3)
                                 print("Rumah Sakit Rujukan:", rsmilih3)
+                                print("Tanggal Registrasi: ", tanggalregist, "/", bulanregist, "/", tahunregist)
                                 print("Tanggal Vaksinasi:", tvaksin3)
-                                               
+                                
                             elif kecamatan4=="Banjarsari":
                                 rs4= ['1.RSUD Kota Surakarta','2.RSUD Brayat Minulyo','3.RS PKU Muhammadiyah Surakarta',
                                       '4.RS Triharsi']
@@ -137,17 +162,22 @@ if konfir2=="Sudah" :
                                                
                                 # output 4
                                 print("Data Registrasi")
-                                print("Nama Pasien:", nama)
+                                print("Nama Pasien:", nama2)
+                                print("NIK:", nik)
+                                print("Tempat Lahir:", tempat2)
+                                print("Tanggal Lahir= ", tanggal, "/", bulan, "/", tahun)
                                 print("Usia:", tahunusia, "Tahun")
-                                print("Nama Ayah:", nama_ayah)
-                                print("Nama Ibu:", nama_ibu)
+                                print("Nama Ayah:", nama_ayah2)
+                                print("Nama Ibu:", nama_ibu2)
+                                print("Alamat:", kecamatan4)
                                 print("Rumah Sakit Rujukan:", rsmilih4)
+                                print("Tanggal Registrasi: ", tanggalregist, "/", bulanregist, "/", tahunregist)
                                 print("Tanggal Vaksinasi:", tvaksin4)
-                                               
+
                             else:
                                 rs5 = ['1.RSUD Bung Karno', '2.RS Kustati','3.RS PKU Sampangan']
                                 bunga5 = 0
-                                for win in range(0, 4):
+                                for win in range(0, 3):
                                     print(rs5[bunga5])
                                     bunga5 += 1
                                 print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
@@ -156,11 +186,16 @@ if konfir2=="Sudah" :
 
                                 # output 5
                                 print("Data Registrasi")
-                                print("Nama Pasien:", nama)
+                                print("Nama Pasien:", nama2)
+                                print("NIK:", nik)
+                                print("Tempat Lahir:", tempat2)
+                                print("Tanggal Lahir= ", tanggal, "/", bulan, "/", tahun)
                                 print("Usia:", tahunusia, "Tahun")
-                                print("Nama Ayah:", nama_ayah)
-                                print("Nama Ibu:", nama_ibu)
+                                print("Nama Ayah:", nama_ayah2)
+                                print("Nama Ibu:", nama_ibu2)
+                                print("Alamat: Pasar Kliwon")
                                 print("Rumah Sakit Rujukan:", rsmilih5)
+                                print("Tanggal Registrasi: ", tanggalregist, "/", bulanregist, "/", tahunregist)
                                 print("Tanggal Vaksinasi:", tvaksin5)
 
 
