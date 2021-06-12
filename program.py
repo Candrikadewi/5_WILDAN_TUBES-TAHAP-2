@@ -48,10 +48,12 @@ if konfir2=="Y" :
         except ValueError:
             print("Harus berformat \"<hari> <bulan> <tahun>\"")
 
+            
         usia = registrasi - lahir
         usia2 = (usia.days)
-        usia3 = usia2 / 365
-        print(usia3)
+        usia3 = round((usia2 / 365),2)
+        print("Usia :", usia3, "tahun")
+
 
     if usia3 >= 18:
         jk = str(input("Jenis Kelamin (P/L)="))
