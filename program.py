@@ -29,16 +29,19 @@ if konfir2=="Y" :
     tempat= str(input("Tempat Lahir="))
     tempat2= tempat.title()
     
-    lahir, registrasi = None, None
+    cllahir, clregistrasi = 0, 0
     import datetime
 
-    while lahir is None:
-        tanggal = input("Tanggal Lahir (dd mm yyyy) : ")
-
+    while cllahir == 0:
         try:
-            lahir = datetime.datetime.strptime(tanggal, "%d %m %Y")
-        except ValueError:
+            tanggal = str(input("Tanggal Lahir (dd mm yyyy) : "))
+            tgl1, bln1, thn1 = tanggal.split(" ")
+            ustanggal = datetime.date(int(thn1), int(bln1), int(tgl1))
+        except:
             print("Harus berformat \"<hari> <bulan> <tahun>\"")
+        else:
+            lahir = f"{str(tgl1).zfill(2)}-{str(bln1).zfill(2)}-{thn1}"
+            break
 
     while registrasi is None:
         tanggal1 = input("Tanggal Registrasi (dd mm yyyy) : ")
