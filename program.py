@@ -255,6 +255,7 @@ if konfir2=="Y" :
                                 
 
                 else:
+                            kecamatan5 = "Pasar Kliwon"
                             rs5 = ['1.RSUD Bung Karno', '2.RS Kustati','3.RS PKU Sampangan']
                             bunga5 = 0
                             for win in range(0, 3):
