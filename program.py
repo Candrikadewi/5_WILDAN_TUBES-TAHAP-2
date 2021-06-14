@@ -43,21 +43,22 @@ if konfir2=="Y" :
             lahir = f"{str(tgl1).zfill(2)}-{str(bln1).zfill(2)}-{thn1}"
             break
 
-    while registrasi is None:
-        tanggal1 = input("Tanggal Registrasi (dd mm yyyy) : ")
-
+   while clregistrasi == 0:
         try:
-            registrasi = datetime.datetime.strptime(tanggal1, "%d %m %Y")
-        except ValueError:
+            tanggal1 = str(input("Tanggal Registrasi (dd mm yyyy) : "))
+            tgl2, bln2, thn2 = tanggal1.split(" ")
+            retanggal = datetime.date(int(thn2), int(bln2), int(tgl2))
+        except:
             print("Harus berformat \"<hari> <bulan> <tahun>\"")
+        else:
+            registrasi = f"{str(tgl2).zfill(2)}-{str(bln2).zfill(2)}-{thn2}"
+            break
 
-            
-        usia = registrasi - lahir
-        usia2 = (usia.days)
-        usia3 = round((usia2 / 365),2)
-        print("Usia :", usia3, "tahun")
-
-
+    usia = retanggal - ustanggal
+    usia2 = (usia.days)
+    usia3 = round((usia2 / 365),2)
+    print("Usia :", usia3, "tahun")
+    
     if usia3 >= 18:
         jk = str(input("Jenis Kelamin (P/L)="))
         jk2 = jk.title()
@@ -85,7 +86,7 @@ if konfir2=="Y" :
                 print("Mohon maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum"
                                 "memenuhi persyaratan kesehatan")
             else:
-                pernyataan = ['1.Mengalami kesulitan saat menaiki anak tangga','2.Sering mengalami kelelahan',
+                pernyataan = ['1. Mengalami kesulitan saat menaiki anak tangga','2. Sering mengalami kelelahan',
                               '3. Mengalami kesulitan saat berjalan 100-200 meter',
                               '4. Adanya penurunan berat badan yang signifikan dalam satu tahun terakhir']
                 rose2 = 0
