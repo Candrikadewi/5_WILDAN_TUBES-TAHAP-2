@@ -251,6 +251,7 @@ if konfir2=="Y" :
 
                             # buka file
                             file_data = open("database.txt", "a")
+                            
                             # tulis teks
                             file_data.write(teks)
 
