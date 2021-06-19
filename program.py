@@ -107,10 +107,10 @@ if konfir2=="Y" :
                 pernyataan = ['1. Mengalami kesulitan saat menaiki anak tangga','2. Sering mengalami kelelahan',
                               '3. Mengalami kesulitan saat berjalan 100-200 meter',
                               '4. Adanya penurunan berat badan yang signifikan dalam satu tahun terakhir']
-                rose2 = 0
-                for win in range(0, 4):
-                    print(pernyataan[rose2])
-                    rose2 += 1
+                Persyaratan_khusus = 0
+                for syarat in range(0, 4):
+                    print(pernyataan[Persyaratan_khusus])
+                    Persyaratan_khusus += 1
                             
                 pernyataan2 = str(input("Apakah dari pernyataan di atas terdapat 2 atau lebih gejala yang Anda alami (Y/N)?"))
                 pernyataan3 = pernyataan2.title()
@@ -120,12 +120,12 @@ if konfir2=="Y" :
                 # Memasukkan kecamatan tempat tinggal
                 else:
                     listkecamatan = ['1. Jebres','2. Laweyan', '3. Banjarsari', '4. Serengan','5. Pasar Kliwon']
-                    matahari = 0
-                    for win in range(0, 5):
+                    kecamatan_solo = 0
+                    for wilayah in range(0, 5):
                         print(listkecamatan[matahari])
-                        matahari += 1
+                        kecamatan_solo += 1
                     kecamatan= str(input("Masukkan alamat Kecamatan Anda ="))
-                kecamatan1= kecamatan.title()
+                kecamatan1 = kecamatan.title()
                 kecamatan2 = kecamatan.title()
                 kecamatan3 = kecamatan.title()
                 kecamatan4 = kecamatan.title()
@@ -135,10 +135,10 @@ if konfir2=="Y" :
                 if kecamatan1=="Laweyan":
                             rs1= ['1.RSUD Panti Waluyo','2.RSUD Kasih Ibu','3.RS JIH Surakarta','4.RSUP Surakarta',
                                       '5.RS Mata Solo','6. RSGM Sulastri','7.RS Onkologi Surakarta']
-                            bunga1 = 0
-                            for win in range(0, 7):
+                            daftar1 = 0
+                            for rs_solo1 in range(0, 7):
                                 print(rs1[bunga1])
-                                bunga1 += 1
+                                daftar1 += 1
                             print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                             rsmilih1= str(input("Masukkan nama rumah sakit yang Anda pilih="))
                             tvaksin = str("Anda akan divaksinasi 7 hari setelah registarsi. Mohon cek kalender dengan seksama")
@@ -173,10 +173,10 @@ if konfir2=="Y" :
                 # Memilih rumah sakit di kecamatan Jebres
                 elif kecamatan2=="Jebres":
                             rs2= ['1.RSUD Dr.Moewardi','2.RSUD Oen Surakarta','3.RS Hermina','4.RSJP Surakarta']
-                            bunga2 = 0
-                            for win in range(0, 4):
+                            daftar2 = 0
+                            for rs_solo2 in range(0, 4):
                                 print(rs2[bunga2])
-                                bunga2 += 1
+                                daftar2 += 1
                             print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                             rsmilih2= str(input("Masukkan nama rumah sakit yang Anda pilih="))
                             tvaksin = str("Anda akan divaksinasi 7 hari setelah registarsi. Mohon cek kalender dengan seksama")
@@ -249,10 +249,10 @@ if konfir2=="Y" :
                 elif kecamatan4=="Banjarsari":
                             rs4= ['1.RSUD Kota Surakarta','2.RSUD Brayat Minulyo','3.RS PKU Muhammadiyah Surakarta',
                                       '4.RS Triharsi']
-                            bunga4 = 0
-                            for win in range(0, 4):
-                                print(rs4[bunga4])
-                                bunga4 += 1
+                            daftar4 = 0
+                            for rs_solo4 in range(0, 4):
+                                print(rs4[daftar4])
+                                daftar4 += 1
                             print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
                             rsmilih4= str(input("Masukkan nama rumah sakit yang Anda pilih="))
                             tvaksin = str("Anda akan divaksinasi 7 hari setelah registarsi. Mohon cek kalender dengan seksama")
