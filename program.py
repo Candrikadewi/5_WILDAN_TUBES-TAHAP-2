@@ -1,17 +1,20 @@
-#memasukkan identitas
+# import modul
+import datetime
+
+# memasukkan identitas
 print("Selamat datang di Website Registrasi Vaksinasi COVID-19")
 print("Mohon persiapkan data-data di bawah ini untuk keperluan registrasi:")
 listdata = ['1. KTP','2. Surat kesehatan dari dokter bagi penderita penyakit kronis']
 
-#menampilkan listdata keperluan
-rose = 0
-for win in range (0,2) :
-    print (listdata[rose])
-    rose+=1
+# menampilkan listdata keperluan
+keperluan = 0
+for syarat in range (0,2) :
+    print (listdata[keperluan])
+    keperluan+=1
 konfir = str(input("Apakah semua data yang diperlukan sudah Anda siapkan? (Y/N):"))
 konfir2 = konfir.title()
 
-#Mengisi identitas 
+# Mengisi identitas 
 if konfir2=="Y" :
     print("Silakan mengisi identitas Anda dengan seksama dan jawablah pertanyaan sesuai dengan kondisi Anda saat ini")
     nama = str(input("Nama Lengkap="))
@@ -29,9 +32,10 @@ if konfir2=="Y" :
     tempat= str(input("Tempat Lahir="))
     tempat2= tempat.title()
     
+    # Menghitung usia pengguna
     cllahir, clregistrasi = 0, 0
-    import datetime
 
+    # Input tanggal lahir
     while cllahir == 0:
         try:
             tanggal = str(input("Tanggal Lahir (dd mm yyyy) : "))
@@ -42,7 +46,8 @@ if konfir2=="Y" :
         else:
             lahir = f"{str(tgl1).zfill(2)}-{str(bln1).zfill(2)}-{thn1}"
             break
-
+    
+    # Input tanggal registrasi
    while clregistrasi == 0:
         try:
             tanggal1 = str(input("Tanggal Registrasi (dd mm yyyy) : "))
@@ -54,23 +59,32 @@ if konfir2=="Y" :
             registrasi = f"{str(tgl2).zfill(2)}-{str(bln2).zfill(2)}-{thn2}"
             break
 
+    # Program menghitung usia
     usia = retanggal - ustanggal
     usia2 = (usia.days)
     usia3 = round((usia2 / 365),2)
     print("Usia :", usia3, "tahun")
     
+    # Persyaratan vaksinasi
+    # Syarat usia
     if usia3 >= 18:
         jk = str(input("Jenis Kelamin (P/L)="))
         jk2 = jk.title()
+        
+        # Syarat untuk perempuan
         if jk2 =="P":
             mengandung= str(input("Apakah anda sedang mengandung (Y/N)?"))
             mengandung2 = mengandung.title()
             if mengandung2=="Y":
                     print("Maaf anda belum dapat mengikuti program vaksinasi dikarenakan sedang mengandung")
+        
+        # Syarat riwayat covid-19
         terpapar = str(input("Apakah Anda pernah terpapar covid dalam jangka waktu 3 bulan terakhir?(Y/N)"))
         terpapar2 = terpapar.title()
         if terpapar2 == "Y":
             print("Maaf Anda belum dapat mengikuti program vaksinansi dikarenakan belum memenuhi persyaratan kesehatan")
+        
+        # Syarat riwayat penyakit kronis
         else:     
             riwayatsakit = str(input("Apakah Anda memiliki riwayat hipertensi atau penyakit kronis lain?(Y/N)"))
             riwayatsakit2 = riwayatsakit.title()
@@ -80,11 +94,15 @@ if konfir2=="Y" :
                 if suratizin2 == "N":
                             print("Mohon maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum"
                                               "memenuhi persyaratan kesehatan")
+            
+            # Syarat riwayat vaksin
             vaksin= str(input("Apakah anda menerima vaksin lain dalam kurun waktu 1 bulan terakhir? (Y/N)"))
             vaksin2 = vaksin.title()
             if vaksin2 == "Y":
                 print("Mohon maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum"
                                 "memenuhi persyaratan kesehatan")
+            
+            # Persyaratan khusus
             else:
                 pernyataan = ['1. Mengalami kesulitan saat menaiki anak tangga','2. Sering mengalami kelelahan',
                               '3. Mengalami kesulitan saat berjalan 100-200 meter',
@@ -98,6 +116,8 @@ if konfir2=="Y" :
                 pernyataan3 = pernyataan2.title()
                 if pernyataan3=="Y":
                     print("Maaf Anda belum dapat mengikuti program vaksinasi dikarenakan belum memenuhi syarat kesehatan")
+                
+                # Memasukkan kecamatan tempat tinggal
                 else:
                     listkecamatan = ['1. Jebres','2. Laweyan', '3. Banjarsari', '4. Serengan','5. Pasar Kliwon']
                     matahari = 0
@@ -109,6 +129,9 @@ if konfir2=="Y" :
                 kecamatan2 = kecamatan.title()
                 kecamatan3 = kecamatan.title()
                 kecamatan4 = kecamatan.title()
+                kecamatan5 = kecamatan.title()
+                
+                # Memilih rumah sakit di kecamatan Laweyan
                 if kecamatan1=="Laweyan":
                             rs1= ['1.RSUD Panti Waluyo','2.RSUD Kasih Ibu','3.RS JIH Surakarta','4.RSUP Surakarta',
                                       '5.RS Mata Solo','6. RSGM Sulastri','7.RS Onkologi Surakarta']
@@ -134,18 +157,20 @@ if konfir2=="Y" :
                             print("Tanggal Registrasi: ", registrasi)
                             print("Tanggal Vaksinasi:", tvaksin)
 
-                            #format teks
+                            # save database
+                            # format teks
                             teks ="\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: {}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi {}\n----------".format(nama2,nik,tempat2,lahir,usia3,nama_ayah2, nama_ibu2, kecamatan1,rsmilih1, registrasi, tvaksin)
 
-                            #buka file
+                            # buka file
                             file_data = open("database.txt", "a")
 
-                            #tulis teks
+                            # tulis teks
                             file_data.write(teks)
 
-                            #tutup file
+                            # tutup file
                             file_data.close()
 
+                # Memilih rumah sakit di kecamatan Jebres
                 elif kecamatan2=="Jebres":
                             rs2= ['1.RSUD Dr.Moewardi','2.RSUD Oen Surakarta','3.RS Hermina','4.RSJP Surakarta']
                             bunga2 = 0
@@ -170,6 +195,7 @@ if konfir2=="Y" :
                             print("Tanggal Registrasi: ", registrasi)
                             print("Tanggal Vaksinasi:", tvaksin)
 
+                            # save database
                             # format teks
                             teks = "\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: {}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi: {}\n----------".format(
                                 nama2, nik, tempat2, lahir, usia3, nama_ayah2, nama_ibu2, kecamatan2, rsmilih2,
@@ -184,7 +210,7 @@ if konfir2=="Y" :
                             # tutup file
                             file_data.close()
 
-
+                # Memilih rumah sakit di kecamatan Serengan
                 elif kecamatan3=="Serengan":
                             rsmilih3= "RS Bung Karno"
                             print("Anda dapat melakukan vaksin di", rsmilih3)
@@ -204,6 +230,7 @@ if konfir2=="Y" :
                             print("Tanggal Registrasi: ", registrasi)
                             print("Tanggal Vaksinasi:", tvaksin)
 
+                            # save database
                             # format teks
                             teks = "\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: {}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi: {}\n----------".format(
                                 nama2, nik, tempat2, lahir, usia3, nama_ayah2, nama_ibu2, kecamatan3, rsmilih3,
@@ -218,7 +245,7 @@ if konfir2=="Y" :
                             # tutup file
                             file_data.close()
 
-                                
+                # Memilih rumah sakit di kecamatan Banjarsari
                 elif kecamatan4=="Banjarsari":
                             rs4= ['1.RSUD Kota Surakarta','2.RSUD Brayat Minulyo','3.RS PKU Muhammadiyah Surakarta',
                                       '4.RS Triharsi']
@@ -244,6 +271,7 @@ if konfir2=="Y" :
                             print("Tanggal Registrasi: ",registrasi)
                             print("Tanggal Vaksinasi:", tvaksin)
 
+                            # save database
                             # format teks
                             teks = "\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: {}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi: {}\n----------".format(
                                 nama2, nik, tempat2, lahir, usia3, nama_ayah2, nama_ibu2, kecamatan4, rsmilih4,
@@ -258,46 +286,50 @@ if konfir2=="Y" :
                             # tutup file
                             file_data.close()
                                 
+                # Memilih rumah sakit di kecamatan Pasar Kliwon
+                elif kecamatan5 == "Pasar Kliwon":
+                    rs5 = ['1.RSUD Bung Karno', '2.RS Kustati', '3.RS PKU Sampangan']
+                    daftar5 = 0
+                    for rs_solo5 in range(0, 3):
+                        print(rs5[daftar5])
+                        daftar5 += 1
+                    print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
+                    rsmilih5 = str(input("Masukkan nama rumah sakit yang Anda pilih="))
+                    tvaksin = str("Anda akan divaksinasi 7 hari setelah registarsi. Mohon cek kalender dengan seksama")
 
+                    # output 5
+                    print("===========Data Registrasi==========")
+                    print("Nama Pasien:", nama2)
+                    print("NIK:", nik)
+                    print("Tempat Lahir:", tempat2)
+                    print("Tanggal Lahir= ", lahir)
+                    print("Usia:", usia3, "Tahun")
+                    print("Nama Ayah:", nama_ayah2)
+                    print("Nama Ibu:", nama_ibu2)
+                    print("Alamat: Pasar Kliwon")
+                    print("Rumah Sakit Rujukan:", rsmilih5)
+                    print("Tanggal Registrasi: ", registrasi)
+                    print("Tanggal Vaksinasi:", tvaksin)
+
+                    # Save Database
+                    # format teks
+                    teks = "\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: " \
+                           "{}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi: " \
+                           "{}\n----------".format(nama2, nik, tempat2, lahir, usia3, nama_ayah2, nama_ibu2, kecamatan5,
+                                                   rsmilih5, registrasi, tvaksin)
+                    # save database
+                    # buka file
+                    file_data = open("database.txt", "a")
+
+                    # tulis teks
+                    file_data.write(teks)
+
+                    # tutup file
+                    file_data.close()
+
+                # Jika kecamatan tidak valid
                 else:
-                            kecamatan5 = "Pasar Kliwon"
-                            rs5 = ['1.RSUD Bung Karno', '2.RS Kustati','3.RS PKU Sampangan']
-                            bunga5 = 0
-                            for win in range(0, 3):
-                                print(rs5[bunga5])
-                                bunga5 += 1
-                            print("Anda dapat melakukan vaksin di daftar rumah sakit tersebut")
-                            rsmilih5 = str(input("Masukkan nama rumah sakit yang Anda pilih="))
-                            tvaksin = str("Anda akan divaksinasi 7 hari setelah registarsi. Mohon cek kalender dengan seksama")
-
-                            # output 5
-                            print("===========Data Registrasi==========")
-                            print("Nama Pasien:", nama2)
-                            print("NIK:", nik)
-                            print("Tempat Lahir:", tempat2)
-                            print("Tanggal Lahir= ", lahir)
-                            print("Usia:", usia3, "Tahun")
-                            print("Nama Ayah:", nama_ayah2)
-                            print("Nama Ibu:", nama_ibu2)
-                            print("Alamat: Pasar Kliwon")
-                            print("Rumah Sakit Rujukan:", rsmilih5)
-                            print("Tanggal Registrasi: ", registrasi)
-                            print("Tanggal Vaksinasi:", tvaksin)
-
-                            # format teks
-                            teks = "\nNama Pasien: {}\nNIK: {}\nTempat Lahir: {}\nTanggal Lahir: {}\nUsia: {}\nNama Ayah: {}\nNama Ibu: {}\nAlamat: {}\nRS Rujukan: {}\nTanggal Registrasi: {}\nTanggal Vaksinasi: {}\n----------".format(nama2, nik, tempat2, lahir, usia3, nama_ayah2, nama_ibu2, kecamatan5, rsmilih5,registrasi, tvaksin)
-
-                            # buka file
-                            file_data = open("database.txt", "a")
-
-                            # tulis teks
-                            file_data.write(teks)
-
-                            # tutup file
-                            file_data.close()
-                                
-
-
+                    print("Kecamatan yang dimasukkan tidak valid, mohon ulang program kembali.")
     else:
         print("Maaf Anda belum dapat mengikuti program vaksinasi dikarenakan usia Anda belum mencukupi / masih di bawah 18 tahun")
 else:
